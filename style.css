@@ -20,6 +20,11 @@ header {
   top: 0;
   z-index: 100;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease-in-out; /* Smooth hiding effect */
+}
+
+header.hidden {
+  transform: translateY(-100%); /* Hide the header by moving it up */
 }
 
 header .container {
@@ -144,6 +149,53 @@ footer {
   font-size: 0.9rem;
 }
 
+.tableau-container {
+  background: #f8fafc; /* Remove cc.png background */
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  margin: 40px auto;
+  max-width: 95%;
+}
+
+.tableau-container h3 {
+  font-size: 1.8rem;
+  color: #1e3a8a;
+  margin-bottom: 10px;
+}
+
+.tableau-container p {
+  font-size: 1rem;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+.tableau-container img {
+  display: block;
+  width: 100%; /* Ensure the image spans the full width */
+  height: auto; /* Maintain aspect ratio for landscape mode */
+  max-height: 400px; /* Limit the height to ensure landscape orientation */
+  object-fit: cover; /* Crop the image to fit the container */
+  margin-bottom: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#home {
+  background: linear-gradient(to right, #e0f2fe, #f0f9ff); /* Remove cc.png background */
+  color: #333; /* Reset text color */
+  padding: 80px 20px;
+}
+
+#home::before {
+  content: none; /* Remove dark overlay */
+}
+
+#home h2, #home p, #home .btn {
+  position: relative;
+  z-index: 2; /* Ensure text and buttons appear above the overlay */
+}
+
 /* Fade-in animation */
 @keyframes fadeIn {
   from {
@@ -154,44 +206,5 @@ footer {
   to {
     opacity: 1;
     transform: translateY(0);
-  }
-}
-
-
-/* Improve dropdown/select visibility */
-select {
-  width: 100%;
-  max-width: 400px;
-  padding: 10px;
-  font-size: 1rem;
-  border: 1px solid #ccc;
-  border-radius: 6px;
-  background-color: white;
-  margin-bottom: 20px;
-}
-
-/* Ensure labels are clear and consistent */
-label {
-  display: block;
-  font-weight: 600;
-  margin-bottom: 8px;
-  color: #1e293b;
-  font-size: 1rem;
-}
-
-/* Add responsiveness for smaller screens */
-@media (max-width: 600px) {
-  .card {
-    width: 100%;
-  }
-
-  header .container {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  nav a {
-    margin-left: 0;
-    margin-top: 10px;
   }
 }
