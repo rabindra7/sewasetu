@@ -25,13 +25,21 @@
     <a href="#services" class="btn">Explore Services</a>
 
     <!-- Tableau Dashboard Embed -->
-    <div class="tableau-container" style="margin-top: 40px;">
+    <div class="tableau-container" style="margin-top: 40px; text-align: center;">
+      <div style="display: flex; align-items: center; justify-content: center; margin-bottom: 20px;">
+        <span style="font-size: 2rem; color: #1e3a8a; margin-right: 10px;">&#9742;</span>
+        <span style="font-size: 2rem; color: #1e3a8a; font-weight: bold; text-transform: uppercase;">1800-345-3574</span>
+      </div>
+      <img src="cc.png" alt="Call Center" class="landscape-image" />
+      <h3 style="color: #1e3a8a; margin-bottom: 10px;">Incoming Calls Summary</h3>
+      <p style="color: #555; margin-bottom: 20px;">Visualize the call data and trends for better insights.</p>
       <iframe 
         src="https://public.tableau.com/views/IncomingcallssummarytillApr25/MAINVIEW?:language=en-US&publish=yes&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link?:embed=y&:display_count=yes&:showVizHome=no" 
-        width="100%" 
+        width="90%" 
         height="800" 
         frameborder="0" 
-        allowfullscreen>
+        allowfullscreen
+        style="border: 4px solid #1e40af; border-radius: 15px; box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); padding: 15px;">
       </iframe>
     </div>
   </section>
@@ -66,6 +74,20 @@
         iframe.src = iframe.src;
       }
     }, 120000); // 2 min , 1 min=60000 ms
+  </script>
+
+  <script>
+    let lastScrollY = window.scrollY;
+    const header = document.querySelector("header");
+
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > lastScrollY) {
+        header.classList.add("hidden"); // Hide header on scroll down
+      } else {
+        header.classList.remove("hidden"); // Show header on scroll up
+      }
+      lastScrollY = window.scrollY;
+    });
   </script>
 </body>
 </html>
