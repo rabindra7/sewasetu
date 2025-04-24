@@ -156,3 +156,42 @@ footer {
     transform: translateY(0);
   }
 }
+
+
+/* Improve dropdown/select visibility */
+select {
+  width: 100%;
+  max-width: 400px;
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  background-color: white;
+  margin-bottom: 20px;
+}
+
+/* Ensure labels are clear and consistent */
+label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: #1e293b;
+  font-size: 1rem;
+}
+
+/* Add responsiveness for smaller screens */
+@media (max-width: 600px) {
+  .card {
+    width: 100%;
+  }
+
+  header .container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  nav a {
+    margin-left: 0;
+    margin-top: 10px;
+  }
+}
