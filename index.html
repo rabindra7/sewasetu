@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SEWA SETU CALL CENTRE </title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <div class="container">
+      <h1>SEWA SETU CALL CENTRE </h1>
+      <nav>
+        <a href="#home">Home</a>
+        <a href="#services">Services</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <section id="home" class="hero">
+    <h2>Welcome to SEWA SETU</h2>
+    <p>A unified digital platform for citizens of Assam to access government services and information.</p>
+    <a href="#services" class="btn">Explore Services</a>
+
+    <!-- Tableau Dashboard Embed -->
+    <div class="tableau-container" style="margin-top: 40px;">
+      <iframe 
+        src="https://public.tableau.com/views/IncomingcallssummarytillApr25/MAINVIEW?:language=en-US&publish=yes&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link?:embed=y&:display_count=yes&:showVizHome=no" 
+        width="100%" 
+        height="800" 
+        frameborder="0" 
+        allowfullscreen>
+      </iframe>
+    </div>
+  </section>
+
+  <section id="services" class="services">
+    <h3>Our Services</h3>
+    <div class="service-cards">
+      <div class="card">
+        <h4>Citizen Services</h4>
+        <p>Access various public service schemes and apply online.</p>
+      </div>
+      <div class="card">
+        <h4>Grievance Redressal</h4>
+        <p>Register complaints and track resolution status in real time.</p>
+      </div>
+      <div class="card">
+        <h4>E-Governance Updates</h4>
+        <p>Stay informed about the latest e-Governance initiatives in Assam.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer id="contact">
+    <p>&copy; 2025 SEWA SETU Assam. All rights reserved.</p>
+  </footer>
+
+  <script>
+    // Auto-refresh Tableau dashboard every 30 seconds
+    setInterval(() => {
+      const iframe = document.querySelector(".tableau-container iframe");
+      if (iframe) {
+        iframe.src = iframe.src;
+      }
+    }, 120000); // 2 min , 1 min=60000 ms
+  </script>
+</body>
+</html>
